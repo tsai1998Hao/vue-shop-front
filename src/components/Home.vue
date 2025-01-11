@@ -57,14 +57,14 @@ const products=ref([]);
             product_ID_1: document.getElementById('product_ID_1_Alice').value,
             product_ID_2: document.getElementById('product_ID_2_Alice').value,
             product_amount_1: document.getElementById('product_amount_1_Alice').value,
-            product_amount_2: document.getElementById('product_amount_2_Alice').value
+            product_amount_2: document.getElementById('product_amount_2_Alice').value ||0
           };
             console.log(
             "顧客的id:",document.getElementById('customer_ID_Alice').value,
             "產品的id:",document.getElementById('product_ID_1_Alice').value,
             "數量:",document.getElementById('product_amount_1_Alice').value,
             "產品2的id:", document.getElementById('product_ID_2_Alice').value,
-            "數量:", document.getElementById('product_amount_2_Alice').value 
+            "數量:", document.getElementById('product_amount_2_Alice').value ||0
             )
 
           fetch('http://127.0.0.1/vue-shop-back/test-api.php', {
