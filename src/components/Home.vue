@@ -47,7 +47,7 @@ const products=ref([]);
       load_products();
 
 
-      function purchance(){
+      function purchance_A(){
 
         console.log(document.getElementById('product_amount_1_Alice').value)
         if (confirm("是否確定購買？")) {
@@ -55,17 +55,16 @@ const products=ref([]);
             action: "buy",
             customer_ID: document.getElementById('customer_ID_Alice').value,
             product_ID_1: document.getElementById('product_ID_1_Alice').value,
-            // product_ID_2: document.getElementById('product_ID_2_Alice').value,
-            // productID2: document.getElementById('productID2').value,
-            product_amount_1_Alice: document.getElementById('product_amount_1_Alice').value,
-            // product_amount_2: document.getElementById('product_amount_2_Alice').value
+            product_ID_2: document.getElementById('product_ID_2_Alice').value,
+            product_amount_1: document.getElementById('product_amount_1_Alice').value,
+            product_amount_2: document.getElementById('product_amount_2_Alice').value
           };
             console.log(
             "顧客的id:",document.getElementById('customer_ID_Alice').value,
             "產品的id:",document.getElementById('product_ID_1_Alice').value,
             "數量:",document.getElementById('product_amount_1_Alice').value,
-            // document.getElementById('product_ID_2_Alice').value, "產品2的id"
-            // Number(document.getElementById('product_amount_2_Alice').value), "數量"
+            "產品2的id:", document.getElementById('product_ID_2_Alice').value,
+            "數量:", document.getElementById('product_amount_2_Alice').value 
             )
 
           fetch('http://127.0.0.1/vue-shop-back/test-api.php', {
@@ -200,7 +199,7 @@ const products=ref([]);
                   <b-form-input type="number" min="1" placeholder="請輸入數量" id="product_amount_1_Alice" aria-required=""></b-form-input>
                 </div> -->
                 <!-- 商品3 -->
-                <a href="#" class="btn btn-primary mt-3" @click="purchance">立刻購買</a>
+                <a href="#" class="btn btn-primary mt-3" @click="purchance_A">立刻購買</a>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item" id="customer1_purchase_his">An item</li>
