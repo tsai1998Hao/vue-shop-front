@@ -90,7 +90,7 @@ const products=ref([]);
         }
       }
 
-      function purchance2(){
+      function purchance_B(){
         const formData2 = {
           action: "buy",
           customer_ID: document.getElementById('customer_ID_Bob').value,
@@ -111,7 +111,7 @@ const products=ref([]);
         .then(response =>response.json())
         .then(data => {
             console.log(data);
-
+            window.location.reload();
         })
         .catch(error => {
             console.error('Error:', error);
@@ -119,7 +119,7 @@ const products=ref([]);
 
       }
 
-      function purchance3(){
+      function purchance_C(){
         const formData3 = {
             action: "buy",
             customer_ID: document.getElementById('customer_ID_Charlie').value,
@@ -236,7 +236,7 @@ const products=ref([]);
                     <b-form-input type="number" min="1" placeholder="請輸入數量" id="product_amount_1_Bob"></b-form-input>
                   </b-input-group>
                 </div>
-                <a href="#" class="btn btn-primary mt-3" @click="purchance2">立刻購買</a>
+                <a href="#" class="btn btn-primary mt-3" @click="purchance_B">立刻購買</a>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item" id="customer2_purchase_his">An item</li>
@@ -267,7 +267,7 @@ const products=ref([]);
                     <b-form-input type="number" min="1" placeholder="請輸入數量" id="product_amount_1_Charlie"></b-form-input>
                   </b-input-group>
                 </div>
-                <a href="#" class="btn btn-primary mt-3" @click="purchance3">立刻購買</a>
+                <a href="#" class="btn btn-primary mt-3" @click="purchance_C">立刻購買</a>
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item" id="customer3_purchase_his">An item</li>
