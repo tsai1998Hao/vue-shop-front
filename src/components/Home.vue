@@ -49,7 +49,7 @@ const products=ref([]);
 
       function purchance_A(){
 
-        console.log(document.getElementById('product_amount_1_Alice').value)
+
         if (confirm("是否確定購買？")) {
           const formData1 = {
             action: "buy",
@@ -95,9 +95,11 @@ const products=ref([]);
           action: "buy",
           customer_ID: document.getElementById('customer_ID_Bob').value,
           product_ID_1: document.getElementById('product_ID_1_Bob').value,
-          // productID2: document.getElementById('productID2').value,
-          product_amount_1: document.getElementById('product_amount_1_Bob').value
+          product_ID_2: 0,
+          product_amount_1: document.getElementById('product_amount_1_Bob').value,
+          product_amount_2: 0,
         };
+
           fetch('http://127.0.0.1/vue-shop-back/test-api.php', {
             method: 'POST',
             headers: {
@@ -105,10 +107,10 @@ const products=ref([]);
             },
             body: JSON.stringify(formData2)    
         })
+        
         .then(response =>response.json())
         .then(data => {
             console.log(data);
-            // window.location.reload();
 
         })
         .catch(error => {
@@ -122,8 +124,9 @@ const products=ref([]);
             action: "buy",
             customer_ID: document.getElementById('customer_ID_Charlie').value,
             product_ID_1: document.getElementById('product_ID_1_Charlie').value,
-            // productID2: document.getElementById('productID2').value,
-            product_amount_1: document.getElementById('product_amount_1_Charlie').value
+            product_ID_2: 0,
+            product_amount_1: document.getElementById('product_amount_1_Charlie').value,
+            product_amount_2: 0
         };
 
           fetch('http://127.0.0.1/vue-shop-back/test-api.php', {
@@ -168,9 +171,9 @@ const products=ref([]);
                 <div>
                   <select class="form-select mt-3" aria-label="Default select example" id="product_ID_1_Alice">
                     <option selected>--選擇商品--</option>
-                    <option value="1">Keyboard</option>
+                    <option value="1">Laptop</option>
                     <option value="2">Headphones</option>
-                    <option value="3">Laptop</option>
+                    <option value="3">Keyboard</option>
                   </select>
                   <b-form-input type="number" min="1" placeholder="請輸入數量" id="product_amount_1_Alice" aria-required=""></b-form-input>
                 </div>
@@ -180,9 +183,9 @@ const products=ref([]);
                 <div>
                   <select class="form-select mt-3" aria-label="Default select example" id="product_ID_2_Alice">
                     <option selected value="0">--選擇商品--</option>
-                    <option value="1">Keyboard</option>
+                    <option value="1">Laptop</option>
                     <option value="2">Headphones</option>
-                    <option value="3">Laptop</option>
+                    <option value="3">Keyboard</option>
                   </select>
                   <b-form-input type="number" placeholder="請輸入數量" id="product_amount_2_Alice" value="0"></b-form-input>
                 </div>
@@ -192,9 +195,9 @@ const products=ref([]);
                 <!-- <div>
                   <select class="form-select mt-3" aria-label="Default select example" id="product_ID_1_Alice">
                     <option selected>--選擇商品--</option>
-                    <option value="1">Keyboard</option>
+                    <option value="1">Laptop</option>
                     <option value="2">Headphones</option>
-                    <option value="3">Laptop</option>
+                    <option value="3">Keyboard</option>
                   </select>
                   <b-form-input type="number" min="1" placeholder="請輸入數量" id="product_amount_1_Alice" aria-required=""></b-form-input>
                 </div> -->
@@ -223,9 +226,9 @@ const products=ref([]);
         
                 <select class="form-select mt-3" aria-label="Default select example" id="product_ID_1_Bob">
                   <option selected>--選擇商品--</option>
-                  <option value="1">Keyboard</option>
-                  <option value="2">Headphones</option>
-                  <option value="3">Laptop</option>
+                    <option value="1">Laptop</option>
+                    <option value="2">Headphones</option>
+                    <option value="3">Keyboard</option>
                 </select>
                 <div>
                   <b-input-group class="mt-3">
@@ -254,9 +257,9 @@ const products=ref([]);
                 </select>  
                 <select class="form-select mt-3" aria-label="Default select example" id="product_ID_1_Charlie">
                   <option selected>--選擇商品--</option>
-                  <option value="1">Keyboard</option>
-                  <option value="2">Headphones</option>
-                  <option value="3">Laptop</option>
+                    <option value="1">Laptop</option>
+                    <option value="2">Headphones</option>
+                    <option value="3">Keyboard</option>
                 </select>
                 <div>
                   <b-input-group class="mt-3">
